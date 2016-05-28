@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/HeDong1117/HDNetworking.git", :tag => s.version }
   s.platform     = :ios, "7.0"
   s.requires_arc = true
-  s.source_files = "HDNetworking/HDNetworking/*.{h,m}"
+  s.source_files = "HDNetworking/**/*.{h,m}"
   s.dependency "AFNetworking", "~> 3.1.0"
 end
