@@ -55,11 +55,19 @@
 #define HDSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 #define HDSYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 #define HDSYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
-/** 系统的版本号 */
-#define HDSystemVersion [[[UIDevice currentDevice] systemVersion] floatValue]
+/** 系统和版本号 */
+#define HDDevice [UIDevice currentDevice]
+#define HDDeviceName HDDevice.name                           // 设备名称
+#define HDDeviceModel HDDevice.model                         // 设备类型
+#define HDDeviceLocalizedModel HDDevice.localizedModel       // 本地化模式
+#define HDDeviceSystemName HDDevice.systemName               // 系统名字
+#define HDDeviceSystemVersion HDDevice.systemVersion         // 系统版本
+#define HDDeviceOrientation HDDevice.orientation             // 设备朝向
+#define HDDeviceUUID HDDevice.identifierForVendor.UUIDString // UUID
+#define HDiOS8 ([HDDeviceSystemVersion floatValue] >= 8.0)   // iOS8以上
 #define HDiPhone ([[UIDevice currentDevice].model rangeOfString:@"iPhone"].length > 0)
-#define HDiPod  ([[UIDevice currentDevice].model rangeOfString:@"iPod"].length > 0)
-#define HDiOS8 ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) // iOS8以上
+#define HDiPod ([[UIDevice currentDevice].model rangeOfString:@"iPod"].length > 0)
+#define HDiPad (HDDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad)
 /******* 设备型号和系统 *******/
 
 
