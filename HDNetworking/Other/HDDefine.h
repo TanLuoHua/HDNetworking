@@ -65,8 +65,8 @@
 #define HDDeviceOrientation HDDevice.orientation             // 设备朝向
 #define HDDeviceUUID HDDevice.identifierForVendor.UUIDString // UUID
 #define HDiOS8 ([HDDeviceSystemVersion floatValue] >= 8.0)   // iOS8以上
-#define HDiPhone ([HDDevice.model rangeOfString:@"iPhone"].length > 0)
-#define HDiPod ([HDDevice.model rangeOfString:@"iPod"].length > 0)
+#define HDiPhone ([HDDeviceModel rangeOfString:@"iPhone"].length > 0)
+#define HDiPod ([HDDeviceModel rangeOfString:@"iPod"].length > 0)
 #define HDiPad (HDDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad)
 /******* 设备型号和系统 *******/
 
